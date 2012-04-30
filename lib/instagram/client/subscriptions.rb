@@ -136,7 +136,7 @@ module Instagram
           end
         end
 
-        payload = MultiJson.decode(json)
+        payload = MultiJson.load(json)
         @changes = Hash.new { |h,k| h[k] = [] }
         for change in payload
           @changes[change['object']] << change
